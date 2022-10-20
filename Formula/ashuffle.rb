@@ -3,8 +3,8 @@ class Ashuffle < Formula
   homepage "https://github.com/joshkunz/ashuffle"
   url "https://github.com/joshkunz/ashuffle.git",
     using:    :git,
-    tag:      "v3.13.3",
-    revision: "2034f9d03f253dd760f13e00143c2900237ede6b"
+    tag:      "v3.13.4",
+    revision: "825b4481372bba7c3df6fc0c010631d9861cd811"
   license "MIT"
   head "https://github.com/joshkunz/ashuffle.git", branch: "master"
 

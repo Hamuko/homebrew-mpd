@@ -9,9 +9,9 @@ class Ashuffle < Formula
   head "https://github.com/joshkunz/ashuffle.git", branch: "master"
 
   bottle do
-    root_url "https://github.com/Hamuko/homebrew-mpd/releases/download/ashuffle-3.13.4"
-    sha256 cellar: :any,                 big_sur:      "fd6403bd3385bc0dc8bc2649ef7f7e060263fa4d3e7c86b8cc6f35fc58a0a85f"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "e89822181ca088dcf18faa17c44eaab3b8aeaad480ad4920cbb83fcd5e6a31b5"
+    root_url "https://github.com/Hamuko/homebrew-mpd/releases/download/ashuffle-3.13.5"
+    sha256 cellar: :any,                 big_sur:      "a7efdcd655601fc1b5695c5b8e52674f7c33973662edbb934db187aaf4b351aa"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "7853831465745579f4a5380432c887a7ee23d2ee731fc0ae79d7b31bb3d929b1"
   end
 
   depends_on "cmake" => :build

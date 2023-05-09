@@ -20,6 +20,11 @@ class Ashuffle < Formula
   depends_on "pkg-config" => :build
   depends_on "libmpdclient"
 
+  # The absl subproject refuses to build on macOS because
+  # it doesn't link against CoreFoundation.
+  # https://github.com/mesonbuild/abseil-cpp/pull/5
+  patch :DATA
+
   def install
     ENV.deparallelize
     system "meson", *std_meson_args, "build"
@@ -54,3 +59,17 @@ class Ashuffle < Formula
       shell_output("#{bin}/ashuffle --port #{port} --only 1")
   end
 end
+__END__
+diff --git a/meson.build b/meson.build
+index 26513a8..7b2dc46 100644
+--- a/meson.build
++++ b/meson.build
+@@ -117,6 +117,9 @@ if not get_option('unsupported_use_system_absl')
+   foreach lib : absl_libs
+     absl_deps += absl.dependency(lib)
+   endforeach
++  if host_machine.system() == 'darwin'
++    absl_deps += dependency('CoreFoundation', required : false)
++  endif
+ else
+   cpp = meson.get_compiler('cpp')

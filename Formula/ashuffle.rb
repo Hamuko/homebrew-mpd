@@ -9,10 +9,11 @@ class Ashuffle < Formula
   head "https://github.com/joshkunz/ashuffle.git", branch: "master"
 
   bottle do
-    root_url "https://github.com/Hamuko/homebrew-mpd/releases/download/ashuffle-3.14.8"
-    sha256 cellar: :any,                 arm64_sonoma: "b36a8b37494b1d37a480ddc0550068cf9d41b7e28573238793335ac83822b6fb"
-    sha256 cellar: :any,                 ventura:      "3a67a43b155dca1708a9838b7fc0ec89ba8ac32e07da115165b8b51caee2bd9f"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "b4889b90638806d5d6794f0cdf929a9a703c8f424f15ca73ba7b74072ae0e783"
+    root_url "https://github.com/Hamuko/homebrew-mpd/releases/download/ashuffle-3.14.10"
+    sha256 cellar: :any, arm64_tahoe:   "02384f4fc8eb74b7c9cfac06e022db921bdc9377945b57d0def87df9f00bdb1f"
+    sha256 cellar: :any, arm64_sequoia: "7b4fe987f8e073cb90712005d787b20b6b1d093b22b13da60a74bd67b55ea752"
+    sha256 cellar: :any, arm64_sonoma:  "e1ab21445c7efd323176126e0d7b29c63a9f7f185a2c2f50bee6a391e88fbd1b"
+    sha256               x86_64_linux:  "534418b5422bb4810802d05680f035a8da33cd2bddec0690766419e8c1b12b0b"
   end
 
   depends_on "cmake" => :build
